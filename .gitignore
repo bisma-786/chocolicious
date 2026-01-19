@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+
+# Production builds
+.next/
+out/
+
+# Environment variables
+.env*
+!.env.example
+
+# IDE files
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Process files
+*.pid
+*.seed
+*.pid.lock
+
+# Testing
+junit.xml
+*.cc.xml
+
+# Next.js
+.next/
+out/
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.temp

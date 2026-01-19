@@ -34,7 +34,14 @@
       "Bash(git commit -m \"feat: Deployable scrollytelling landing page for GitHub Pages\n\n- Implemented canvas-based frame animation with scroll-driven storytelling\n- Added four sequences: Ingredients, Chocolate Flow, Wafer Formation, Final Pack\n- Configured for GitHub Pages deployment with proper relative paths\n- Ensured mobile responsiveness and performance optimization\n- Preserved all original UI/UX and branding\n\")",
       "Bash(ls -la sequence*)",
       "Bash(ls -la *.json *.yml *.yaml package*.json)",
-      "Bash(git remote set-url origin https://github.com/bisma-786/choco-rolls-site.git)"
+      "Bash(git remote set-url origin https://github.com/bisma-786/choco-rolls-site.git)",
+      "Bash(git commit -m \"feat: Configure project for static hosting and add configuration options\n\n- Add CONFIG object for easy customization of brand, links, and text\n- Update image loading to use configurable paths\n- Make overlay texts configurable\n- Add vercel.json for deployment optimization\n- Add README.md with project documentation\n- Ensure compatibility with static hosting platforms\")",
+      "Bash(npm init -y)",
+      "Bash(npm install next react react-dom eslint)",
+      "Bash(move sequence1 publicsequence1)",
+      "Bash(npm run build)",
+      "Bash(git remote set-url origin https://github.com/bisma-786/chocolicious-snack.git)",
+      "Bash(git add --all)"
     ]
   }
 }
