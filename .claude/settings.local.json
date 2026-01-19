@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir /s)",
+      "Bash(dir)",
+      "Bash(dir 01-ingredients)",
+      "Bash(dir 02-chocolate-flow)",
+      "Bash(dir 03-wafer-formation)",
+      "Bash(dir 04-final-pack)",
+      "Bash(powershell Get-ChildItem -Recurse)",
+      "Bash(dir /b \"C:\\\\Users\\\\Bisma Gondal\\\\Desktop\\\\choco-waffers\\\\01-ingredients\")",
+      "Bash(dir /b \"C:\\\\Users\\\\Bisma Gondal\\\\Desktop\\\\choco-waffers\\\\02-chocolate-flow\")",
+      "Bash(dir /b \"C:\\\\Users\\\\Bisma Gondal\\\\Desktop\\\\choco-waffers\\\\03-wafer-formation\")",
+      "Bash(dir /b \"C:\\\\Users\\\\Bisma Gondal\\\\Desktop\\\\choco-waffers\\\\04-final-pack\")",
+      "Bash(git init)",
+      "Bash(git remote add origin https://github.com/bisma-786/choco-rolls.git)",
+      "Bash(git add .)"
+    ]
+  }
+}
