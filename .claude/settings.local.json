@@ -30,7 +30,11 @@
       "Bash(del _config.json)",
       "Bash(git remote set-url origin https://github.com/bisma-786/chocolicious.git)",
       "Bash(git pull origin main)",
-      "Bash(git clone https://github.com/bisma-786/chocolicious.git temp_chocolicious)"
+      "Bash(git clone https://github.com/bisma-786/chocolicious.git temp_chocolicious)",
+      "Bash(git commit -m \"feat: Deployable scrollytelling landing page for GitHub Pages\n\n- Implemented canvas-based frame animation with scroll-driven storytelling\n- Added four sequences: Ingredients, Chocolate Flow, Wafer Formation, Final Pack\n- Configured for GitHub Pages deployment with proper relative paths\n- Ensured mobile responsiveness and performance optimization\n- Preserved all original UI/UX and branding\n\")",
+      "Bash(ls -la sequence*)",
+      "Bash(ls -la *.json *.yml *.yaml package*.json)",
+      "Bash(git remote set-url origin https://github.com/bisma-786/choco-rolls-site.git)"
     ]
   }
 }

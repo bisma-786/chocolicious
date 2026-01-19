@@ -571,6 +571,39 @@
     </footer>
 
     <script>
+        // Configuration object for easy customization
+        const CONFIG = {
+            brandName: "Frisky",
+            copyrightYear: "2026",
+            productName: "Frisky Rolls",
+            contactLink: "https://www.linkedin.com/in/bisma-razzaq786/",
+            ctaLink: "https://www.foodpanda.pk/groceries/product/r1vf-1831/innovative-frisky-rolls-hazelnut-family-pack-box",
+            sequencePaths: {
+                'sequence1': './sequence1/',
+                'sequence2': './sequence2/',
+                'sequence3': './sequence3/',
+                'sequence4': './sequence4/'
+            },
+            overlayTexts: {
+                'sequence1': {
+                    headline: "Precision begins with selection.",
+                    subtext: "Each ingredient chosen with meticulous care. No shortcuts, no compromises."
+                },
+                'sequence2': {
+                    headline: "Molten mastery.",
+                    subtext: "Chocolate transformed through exacting temperatures. Every drop holds intention."
+                },
+                'sequence3': {
+                    headline: "Engineering elegance.",
+                    subtext: "Where science meets artistry. Each curve calculated, each fold perfected."
+                },
+                'sequence4': {
+                    headline: "Heritage crafted. Future refined.",
+                    subtext: "A legacy of taste, shaped for tomorrow's connoisseurs."
+                }
+            }
+        };
+
         class ScrollytellingAnimation {
             constructor() {
                 this.canvas = document.getElementById('animationCanvas');
@@ -719,10 +752,10 @@
                     const img = new Image();
                     img.crossOrigin = 'anonymous';
                     try {
-                        await this.loadImagePromise(img, `./sequence1/${filename}`);
+                        await this.loadImagePromise(img, `${CONFIG.sequencePaths['sequence1']}${filename}`);
                         this.sequences['sequence1'].push(img);
                     } catch (error) {
-                        console.warn(`Failed to load image: ./sequence1/${filename}`, error);
+                        console.warn(`Failed to load image: ${CONFIG.sequencePaths['sequence1']}${filename}`, error);
                         break; // Stop if an image fails to load
                     }
                 }
@@ -732,10 +765,10 @@
                     const img = new Image();
                     img.crossOrigin = 'anonymous';
                     try {
-                        await this.loadImagePromise(img, `./sequence2/${filename}`);
+                        await this.loadImagePromise(img, `${CONFIG.sequencePaths['sequence2']}${filename}`);
                         this.sequences['sequence2'].push(img);
                     } catch (error) {
-                        console.warn(`Failed to load image: ./sequence2/${filename}`, error);
+                        console.warn(`Failed to load image: ${CONFIG.sequencePaths['sequence2']}${filename}`, error);
                         break; // Stop if an image fails to load
                     }
                 }
@@ -745,10 +778,10 @@
                     const img = new Image();
                     img.crossOrigin = 'anonymous';
                     try {
-                        await this.loadImagePromise(img, `./sequence3/${filename}`);
+                        await this.loadImagePromise(img, `${CONFIG.sequencePaths['sequence3']}${filename}`);
                         this.sequences['sequence3'].push(img);
                     } catch (error) {
-                        console.warn(`Failed to load image: ./sequence3/${filename}`, error);
+                        console.warn(`Failed to load image: ${CONFIG.sequencePaths['sequence3']}${filename}`, error);
                         break; // Stop if an image fails to load
                     }
                 }
@@ -758,10 +791,10 @@
                     const img = new Image();
                     img.crossOrigin = 'anonymous';
                     try {
-                        await this.loadImagePromise(img, `./sequence4/${filename}`);
+                        await this.loadImagePromise(img, `${CONFIG.sequencePaths['sequence4']}${filename}`);
                         this.sequences['sequence4'].push(img);
                     } catch (error) {
-                        console.warn(`Failed to load image: ./sequence4/${filename}`, error);
+                        console.warn(`Failed to load image: ${CONFIG.sequencePaths['sequence4']}${filename}`, error);
                         break; // Stop if an image fails to load
                     }
                 }
@@ -871,6 +904,21 @@
 
                 // Show current sequence overlay
                 this.overlays[currentSequence].classList.add('active');
+
+                // Update overlay text content dynamically
+                if (currentSequence === 'sequence1') {
+                    document.querySelector('#overlay1 .headline').textContent = CONFIG.overlayTexts['sequence1'].headline;
+                    document.querySelector('#overlay1 .subtext').textContent = CONFIG.overlayTexts['sequence1'].subtext;
+                } else if (currentSequence === 'sequence2') {
+                    document.querySelector('#overlay2 .headline').textContent = CONFIG.overlayTexts['sequence2'].headline;
+                    document.querySelector('#overlay2 .subtext').textContent = CONFIG.overlayTexts['sequence2'].subtext;
+                } else if (currentSequence === 'sequence3') {
+                    document.querySelector('#overlay3 .headline').textContent = CONFIG.overlayTexts['sequence3'].headline;
+                    document.querySelector('#overlay3 .subtext').textContent = CONFIG.overlayTexts['sequence3'].subtext;
+                } else if (currentSequence === 'sequence4') {
+                    document.querySelector('#overlay4 .headline').textContent = CONFIG.overlayTexts['sequence4'].headline;
+                    document.querySelector('#overlay4 .subtext').textContent = CONFIG.overlayTexts['sequence4'].subtext;
+                }
 
                 // Handle CTA button visibility
                 if (currentSequence === 'sequence4' && this.scrollProgress > 0.95) {
@@ -995,6 +1043,24 @@
 
         // Initialize the animation when the page loads
         document.addEventListener('DOMContentLoaded', () => {
+            // Update brand name and copyright with config
+            document.querySelector('.brand-name').textContent = CONFIG.brandName;
+            document.querySelector('.copyright').textContent = `© ${CONFIG.copyrightYear} ${CONFIG.brandName}. All rights reserved.`;
+
+            // Update navigation links with config
+            document.querySelector('nav a[href="https://www.linkedin.com/in/bisma-razzaq786/"]').href = CONFIG.contactLink;
+            document.querySelector('.cta-button').href = CONFIG.ctaLink;
+
+            // Update overlay texts with config
+            document.querySelector('#overlay1 .headline').textContent = CONFIG.overlayTexts['sequence1'].headline;
+            document.querySelector('#overlay1 .subtext').textContent = CONFIG.overlayTexts['sequence1'].subtext;
+            document.querySelector('#overlay2 .headline').textContent = CONFIG.overlayTexts['sequence2'].headline;
+            document.querySelector('#overlay2 .subtext').textContent = CONFIG.overlayTexts['sequence2'].subtext;
+            document.querySelector('#overlay3 .headline').textContent = CONFIG.overlayTexts['sequence3'].headline;
+            document.querySelector('#overlay3 .subtext').textContent = CONFIG.overlayTexts['sequence3'].subtext;
+            document.querySelector('#overlay4 .headline').textContent = CONFIG.overlayTexts['sequence4'].headline;
+            document.querySelector('#overlay4 .subtext').textContent = CONFIG.overlayTexts['sequence4'].subtext;
+
             new ScrollytellingAnimation();
         });
     </script>
