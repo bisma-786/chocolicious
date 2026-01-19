@@ -41,7 +41,11 @@
       "Bash(move sequence1 publicsequence1)",
       "Bash(npm run build)",
       "Bash(git remote set-url origin https://github.com/bisma-786/chocolicious-snack.git)",
-      "Bash(git add --all)"
+      "Bash(git add --all)",
+      "Bash(git add package.json .gitignore app/ public/ next.config.js index.html)",
+      "Bash(git commit -m \"Update project configuration for chocolicious repository\n\n- Update package.json name to match repository\n- Update repository URLs in package.json\n- Ensure .gitignore properly excludes build artifacts\")",
+      "Bash(git fetch origin)",
+      "Bash(git push --force-with-lease origin main)"
     ]
   }
 }

@@ -184,8 +184,8 @@ export default function Home() {
                         await this.loadImagePromise(img, `${CONFIG.sequencePaths['sequence1']}${filename}`);
                         this.sequences['sequence1'].push(img);
                     } catch (error) {
-                        console.warn(`Failed to load image: ${CONFIG.sequencePaths['sequence1']}${filename}`, error);
-                        break; // Stop if an image fails to load
+                        console.error(`Failed to load image: ${CONFIG.sequencePaths['sequence1']}${filename}`, error);
+                        // Continue loading other images instead of breaking
                     }
                 }
 
@@ -197,8 +197,8 @@ export default function Home() {
                         await this.loadImagePromise(img, `${CONFIG.sequencePaths['sequence2']}${filename}`);
                         this.sequences['sequence2'].push(img);
                     } catch (error) {
-                        console.warn(`Failed to load image: ${CONFIG.sequencePaths['sequence2']}${filename}`, error);
-                        break; // Stop if an image fails to load
+                        console.error(`Failed to load image: ${CONFIG.sequencePaths['sequence2']}${filename}`, error);
+                        // Continue loading other images instead of breaking
                     }
                 }
 
@@ -210,8 +210,8 @@ export default function Home() {
                         await this.loadImagePromise(img, `${CONFIG.sequencePaths['sequence3']}${filename}`);
                         this.sequences['sequence3'].push(img);
                     } catch (error) {
-                        console.warn(`Failed to load image: ${CONFIG.sequencePaths['sequence3']}${filename}`, error);
-                        break; // Stop if an image fails to load
+                        console.error(`Failed to load image: ${CONFIG.sequencePaths['sequence3']}${filename}`, error);
+                        // Continue loading other images instead of breaking
                     }
                 }
 
@@ -223,8 +223,8 @@ export default function Home() {
                         await this.loadImagePromise(img, `${CONFIG.sequencePaths['sequence4']}${filename}`);
                         this.sequences['sequence4'].push(img);
                     } catch (error) {
-                        console.warn(`Failed to load image: ${CONFIG.sequencePaths['sequence4']}${filename}`, error);
-                        break; // Stop if an image fails to load
+                        console.error(`Failed to load image: ${CONFIG.sequencePaths['sequence4']}${filename}`, error);
+                        // Continue loading other images instead of breaking
                     }
                 }
 
@@ -234,6 +234,13 @@ export default function Home() {
                     this.sequences['sequence3'].length,
                     this.sequences['sequence4'].length
                 );
+
+                console.log('Image loading completed. Loaded frames:', {
+                    sequence1: this.sequences['sequence1'].length,
+                    sequence2: this.sequences['sequence2'].length,
+                    sequence3: this.sequences['sequence3'].length,
+                    sequence4: this.sequences['sequence4'].length
+                });
 
                 this.isLoaded = true;
             }
@@ -247,14 +254,16 @@ export default function Home() {
 
                     img.onload = () => {
                         clearTimeout(timeout);
+                        console.log(`Successfully loaded image: ${url}`); // Debug logging
                         resolve(img);
                     };
-                    img.onerror = () => {
+                    img.onerror = (error) => {
                         clearTimeout(timeout);
+                        console.error(`Failed to load image: ${url}`, error); // Debug logging
                         reject(new Error(`Failed to load image: ${url}`));
                     };
 
-                    // Add referrerpolicy for GitHub Pages compatibility
+                    // Add referrerpolicy for Vercel/GitHub Pages compatibility
                     img.referrerpolicy = 'no-referrer';
                     img.src = url;
                 });
