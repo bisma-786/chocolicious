@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARTISANAL - Premium Chocolate Craftsmanship</title>
+    <title>Frisky - Premium Chocolate Craftsmanship</title>
     <style>
         * {
             margin: 0;
@@ -514,13 +514,13 @@
     </div>
 
     <header>
-        <div class="brand-name">ARTISANAL</div>
+        <div class="brand-name">Frisky</div>
         <nav>
             <div class="nav-menu" id="nav-menu">
                 <ul>
                     <li><a href="#product">Collection</a></li>
                     <li><a href="#story">Heritage</a></li>
-                    <li><a href="https://www.linkedin.com/in/bisma-razzaq786/" target="_blank">Atelier</a></li>
+                    <li><a href="https://www.linkedin.com/in/bisma-razzaq786/" target="_blank">Contact</a></li>
                 </ul>
             </div>
             <div class="hamburger" id="hamburger">
@@ -565,8 +565,8 @@
     </div>
 
     <footer>
-        <div class="tagline">Artisanal Chocolate Excellence</div>
-        <div class="copyright">© 2026 ARTISANAL. All rights reserved.</div>
+        <div class="tagline">Frisky Chocolate Excellence</div>
+        <div class="copyright">© 2026 Frisky. All rights reserved.</div>
         <div class="built-by">Crafted with precision by Bisma 💗</div>
     </footer>
 
@@ -623,12 +623,12 @@
             }
 
             async loadImages() {
-                // Define the actual file naming patterns for each sequence with absolute paths
+                // Define the actual file naming patterns for each sequence with relative paths
                 const filePatterns = {
-                    'sequence1': (index) => `/sequence1/undefined_iwdl_${String(index).padStart(3, '0')}.jpg`,
-                    'sequence2': (index) => `/sequence2/Bright_Storm_19_Jan_24OD_${String(index).padStart(3, '0')}.jpg`,
-                    'sequence3': (index) => `/sequence3/ezgif-frame-${String(index).padStart(3, '0')}.jpg`,
-                    'sequence4': (index) => `/sequence4/ezgif-frame-${String(index).padStart(3, '0')}.jpg`
+                    'sequence1': (index) => `./sequence1/undefined_iwdl_${String(index).padStart(3, '0')}.jpg`,
+                    'sequence2': (index) => `./sequence2/Bright_Storm_19_Jan_24OD_${String(index).padStart(3, '0')}.jpg`,
+                    'sequence3': (index) => `./sequence3/ezgif-frame-${String(index).padStart(3, '0')}.jpg`,
+                    'sequence4': (index) => `./sequence4/ezgif-frame-${String(index).padStart(3, '0')}.jpg`
                 };
 
                 // Load images for each sequence
@@ -661,8 +661,22 @@
 
             loadImagePromise(img, url) {
                 return new Promise((resolve, reject) => {
-                    img.onload = () => resolve(img);
-                    img.onerror = () => reject(new Error(`Failed to load image: ${url}`));
+                    // Add timeout to prevent hanging requests
+                    const timeout = setTimeout(() => {
+                        reject(new Error(`Timeout loading image: ${url}`));
+                    }, 10000); // 10 second timeout
+
+                    img.onload = () => {
+                        clearTimeout(timeout);
+                        resolve(img);
+                    };
+                    img.onerror = () => {
+                        clearTimeout(timeout);
+                        reject(new Error(`Failed to load image: ${url}`));
+                    };
+
+                    // Add referrerpolicy for GitHub Pages compatibility
+                    img.referrerpolicy = 'no-referrer';
                     img.src = url;
                 });
             }
