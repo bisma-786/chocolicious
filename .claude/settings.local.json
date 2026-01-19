@@ -19,7 +19,9 @@
       "Bash(git config user.email \"noreply@anthropic.com\")",
       "Bash(git commit -m \"Enhance mobile responsiveness with hamburger menu and improved layout\n\n- Reduced brown spaces on small screens\n- Made images appear larger on mobile devices\n- Converted navbar to hamburger menu for mobile\n- Improved touch targets and mobile UX\n- Optimized canvas rendering for small screens\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\")",
       "Bash(git branch -M main)",
-      "Bash(git push -u origin main)"
+      "Bash(git push -u origin main)",
+      "Bash(git commit -m \"Update scrollytelling landing page with 600vh height and CDN-ready image paths\n\n- Changed page height from 500vh to 600vh as required\n- Updated all image paths to start with leading slash for CDN compatibility\n- Updated text overlays to match specified content\n- Fixed canvas object-contain behavior\n- Maintained all scrollytelling functionality\n- Ensured deployment readiness for Netlify & Vercel\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\")",
+      "Bash(git push origin main)"
     ]
   }
 }
