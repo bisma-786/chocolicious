@@ -25,7 +25,12 @@
       "Bash(git commit -m \"Add vercel.json configuration file\n\n- Added vercel.json for Vercel deployment configuration\n- Updated settings.local.json\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\")",
       "Bash(git commit -m \"Update project with premium branding and fix Vercel deployment\n\n- Fixed vercel.json conflict by removing routes that caused deployment error\n- Updated folder structure to use sequence1-4 as required\n- Implemented premium storytelling with luxury copywriting\n- Updated brand identity to ARTISANAL\n- Enhanced visual storytelling with refined copy\n- Maintained all scrollytelling functionality\n- Ensured compatibility with Vercel/Netlify deployment\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\")",
       "Bash(dir sequence1 /b)",
-      "Bash(git commit -m \"Fix image loading paths to match actual filenames\n\n- Updated image path patterns to match actual filenames in each sequence folder:\n  - sequence1: undefined_iwdl_XXX.jpg\n  - sequence2: Bright_Storm_19_Jan_24OD_XXX.jpg\n  - sequence3: ezgif-frame-XXX.jpg\n  - sequence4: ezgif-frame-XXX.jpg\n- This fixes the image loading issue where images weren''t displaying\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\")"
+      "Bash(git commit -m \"Fix image loading paths to match actual filenames\n\n- Updated image path patterns to match actual filenames in each sequence folder:\n  - sequence1: undefined_iwdl_XXX.jpg\n  - sequence2: Bright_Storm_19_Jan_24OD_XXX.jpg\n  - sequence3: ezgif-frame-XXX.jpg\n  - sequence4: ezgif-frame-XXX.jpg\n- This fixes the image loading issue where images weren''t displaying\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\")",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nUpdate branding from ARTISANAL to Frisky and change Atelier to Contact\n\n- Changed website title from ARTISANAL to Frisky\n- Updated header brand name from ARTISANAL to Frisky\n- Changed navigation link from Atelier to Contact\n- Updated footer tagline and copyright to Frisky\n- Fixed image loading paths for GitHub Pages compatibility\n- Added timeout handling and referrer policy for robust image loading\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(del _config.json)",
+      "Bash(git remote set-url origin https://github.com/bisma-786/chocolicious.git)",
+      "Bash(git pull origin main)",
+      "Bash(git clone https://github.com/bisma-786/chocolicious.git temp_chocolicious)"
     ]
   }
 }

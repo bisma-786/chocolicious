@@ -559,7 +559,7 @@
             <h1 class="headline">Heritage crafted. Future refined.</h1>
             <p class="subtext">A legacy of taste, shaped for tomorrow's connoisseurs.</p>
             <div class="cta-wrapper">
-                <a href="https://www.foodpanda.pk/groceries/product/r1vf-1831/innovative-frisky-rolls-hazelnut-family-pack-box" target="_blank" class="cta-button">Experience Artisanal</a>
+                <a href="https://www.foodpanda.pk/groceries/product/r1vf-1831/innovative-frisky-rolls-hazelnut-family-pack-box" target="_blank" class="cta-button">Experience Frisky</a>
             </div>
         </div>
     </div>
@@ -579,7 +579,98 @@
                 // Set canvas size
                 this.resizeCanvas();
 
-                // Animation sequences
+                // Explicit image arrays for each sequence
+                this.sequence1 = [
+                    "undefined_iwdl_001.jpg", "undefined_iwdl_002.jpg", "undefined_iwdl_003.jpg", "undefined_iwdl_004.jpg", "undefined_iwdl_005.jpg",
+                    "undefined_iwdl_006.jpg", "undefined_iwdl_007.jpg", "undefined_iwdl_008.jpg", "undefined_iwdl_009.jpg", "undefined_iwdl_010.jpg",
+                    "undefined_iwdl_011.jpg", "undefined_iwdl_012.jpg", "undefined_iwdl_013.jpg", "undefined_iwdl_014.jpg", "undefined_iwdl_015.jpg",
+                    "undefined_iwdl_016.jpg", "undefined_iwdl_017.jpg", "undefined_iwdl_018.jpg", "undefined_iwdl_019.jpg", "undefined_iwdl_020.jpg",
+                    "undefined_iwdl_021.jpg", "undefined_iwdl_022.jpg", "undefined_iwdl_023.jpg", "undefined_iwdl_024.jpg", "undefined_iwdl_025.jpg",
+                    "undefined_iwdl_026.jpg", "undefined_iwdl_027.jpg", "undefined_iwdl_028.jpg", "undefined_iwdl_029.jpg", "undefined_iwdl_030.jpg",
+                    "undefined_iwdl_031.jpg", "undefined_iwdl_032.jpg", "undefined_iwdl_033.jpg", "undefined_iwdl_034.jpg", "undefined_iwdl_035.jpg",
+                    "undefined_iwdl_036.jpg", "undefined_iwdl_037.jpg", "undefined_iwdl_038.jpg", "undefined_iwdl_039.jpg", "undefined_iwdl_040.jpg",
+                    "undefined_iwdl_041.jpg", "undefined_iwdl_042.jpg", "undefined_iwdl_043.jpg", "undefined_iwdl_044.jpg", "undefined_iwdl_045.jpg",
+                    "undefined_iwdl_046.jpg", "undefined_iwdl_047.jpg", "undefined_iwdl_048.jpg", "undefined_iwdl_049.jpg", "undefined_iwdl_050.jpg",
+                    "undefined_iwdl_051.jpg", "undefined_iwdl_052.jpg", "undefined_iwdl_053.jpg", "undefined_iwdl_054.jpg", "undefined_iwdl_055.jpg",
+                    "undefined_iwdl_056.jpg", "undefined_iwdl_057.jpg", "undefined_iwdl_058.jpg", "undefined_iwdl_059.jpg", "undefined_iwdl_060.jpg",
+                    "undefined_iwdl_061.jpg", "undefined_iwdl_062.jpg", "undefined_iwdl_063.jpg", "undefined_iwdl_064.jpg", "undefined_iwdl_065.jpg",
+                    "undefined_iwdl_066.jpg", "undefined_iwdl_067.jpg", "undefined_iwdl_068.jpg", "undefined_iwdl_069.jpg", "undefined_iwdl_070.jpg",
+                    "undefined_iwdl_071.jpg", "undefined_iwdl_072.jpg", "undefined_iwdl_073.jpg", "undefined_iwdl_074.jpg", "undefined_iwdl_075.jpg",
+                    "undefined_iwdl_076.jpg", "undefined_iwdl_077.jpg", "undefined_iwdl_078.jpg", "undefined_iwdl_079.jpg", "undefined_iwdl_080.jpg",
+                    "undefined_iwdl_081.jpg", "undefined_iwdl_082.jpg", "undefined_iwdl_083.jpg", "undefined_iwdl_084.jpg", "undefined_iwdl_085.jpg",
+                    "undefined_iwdl_086.jpg", "undefined_iwdl_087.jpg", "undefined_iwdl_088.jpg", "undefined_iwdl_089.jpg", "undefined_iwdl_090.jpg",
+                    "undefined_iwdl_091.jpg", "undefined_iwdl_092.jpg", "undefined_iwdl_093.jpg", "undefined_iwdl_094.jpg", "undefined_iwdl_095.jpg",
+                    "undefined_iwdl_096.jpg", "undefined_iwdl_097.jpg", "undefined_iwdl_098.jpg", "undefined_iwdl_099.jpg", "undefined_iwdl_100.jpg",
+                    "undefined_iwdl_101.jpg", "undefined_iwdl_102.jpg", "undefined_iwdl_103.jpg", "undefined_iwdl_104.jpg", "undefined_iwdl_105.jpg",
+                    "undefined_iwdl_106.jpg", "undefined_iwdl_107.jpg", "undefined_iwdl_108.jpg", "undefined_iwdl_109.jpg", "undefined_iwdl_110.jpg",
+                    "undefined_iwdl_111.jpg", "undefined_iwdl_112.jpg", "undefined_iwdl_113.jpg", "undefined_iwdl_114.jpg", "undefined_iwdl_115.jpg",
+                    "undefined_iwdl_116.jpg", "undefined_iwdl_117.jpg", "undefined_iwdl_118.jpg", "undefined_iwdl_119.jpg", "undefined_iwdl_120.jpg"
+                ];
+
+                this.sequence2 = [
+                    "Bright_Storm_19_Jan_24OD_001.jpg", "Bright_Storm_19_Jan_24OD_002.jpg", "Bright_Storm_19_Jan_24OD_003.jpg", "Bright_Storm_19_Jan_24OD_004.jpg", "Bright_Storm_19_Jan_24OD_005.jpg",
+                    "Bright_Storm_19_Jan_24OD_006.jpg", "Bright_Storm_19_Jan_24OD_007.jpg", "Bright_Storm_19_Jan_24OD_008.jpg", "Bright_Storm_19_Jan_24OD_009.jpg", "Bright_Storm_19_Jan_24OD_010.jpg",
+                    "Bright_Storm_19_Jan_24OD_011.jpg", "Bright_Storm_19_Jan_24OD_012.jpg", "Bright_Storm_19_Jan_24OD_013.jpg", "Bright_Storm_19_Jan_24OD_014.jpg", "Bright_Storm_19_Jan_24OD_015.jpg",
+                    "Bright_Storm_19_Jan_24OD_016.jpg", "Bright_Storm_19_Jan_24OD_017.jpg", "Bright_Storm_19_Jan_24OD_018.jpg", "Bright_Storm_19_Jan_24OD_019.jpg", "Bright_Storm_19_Jan_24OD_020.jpg",
+                    "Bright_Storm_19_Jan_24OD_021.jpg", "Bright_Storm_19_Jan_24OD_022.jpg", "Bright_Storm_19_Jan_24OD_023.jpg", "Bright_Storm_19_Jan_24OD_024.jpg", "Bright_Storm_19_Jan_24OD_025.jpg",
+                    "Bright_Storm_19_Jan_24OD_026.jpg", "Bright_Storm_19_Jan_24OD_027.jpg", "Bright_Storm_19_Jan_24OD_028.jpg", "Bright_Storm_19_Jan_24OD_029.jpg", "Bright_Storm_19_Jan_24OD_030.jpg",
+                    "Bright_Storm_19_Jan_24OD_031.jpg", "Bright_Storm_19_Jan_24OD_032.jpg", "Bright_Storm_19_Jan_24OD_033.jpg", "Bright_Storm_19_Jan_24OD_034.jpg", "Bright_Storm_19_Jan_24OD_035.jpg",
+                    "Bright_Storm_19_Jan_24OD_036.jpg", "Bright_Storm_19_Jan_24OD_037.jpg", "Bright_Storm_19_Jan_24OD_038.jpg", "Bright_Storm_19_Jan_24OD_039.jpg", "Bright_Storm_19_Jan_24OD_040.jpg",
+                    "Bright_Storm_19_Jan_24OD_041.jpg", "Bright_Storm_19_Jan_24OD_042.jpg", "Bright_Storm_19_Jan_24OD_043.jpg", "Bright_Storm_19_Jan_24OD_044.jpg", "Bright_Storm_19_Jan_24OD_045.jpg",
+                    "Bright_Storm_19_Jan_24OD_046.jpg", "Bright_Storm_19_Jan_24OD_047.jpg", "Bright_Storm_19_Jan_24OD_048.jpg", "Bright_Storm_19_Jan_24OD_049.jpg", "Bright_Storm_19_Jan_24OD_050.jpg",
+                    "Bright_Storm_19_Jan_24OD_051.jpg", "Bright_Storm_19_Jan_24OD_052.jpg", "Bright_Storm_19_Jan_24OD_053.jpg", "Bright_Storm_19_Jan_24OD_054.jpg", "Bright_Storm_19_Jan_24OD_055.jpg",
+                    "Bright_Storm_19_Jan_24OD_056.jpg", "Bright_Storm_19_Jan_24OD_057.jpg", "Bright_Storm_19_Jan_24OD_058.jpg", "Bright_Storm_19_Jan_24OD_059.jpg", "Bright_Storm_19_Jan_24OD_060.jpg",
+                    "Bright_Storm_19_Jan_24OD_061.jpg", "Bright_Storm_19_Jan_24OD_062.jpg", "Bright_Storm_19_Jan_24OD_063.jpg", "Bright_Storm_19_Jan_24OD_064.jpg", "Bright_Storm_19_Jan_24OD_065.jpg",
+                    "Bright_Storm_19_Jan_24OD_066.jpg", "Bright_Storm_19_Jan_24OD_067.jpg", "Bright_Storm_19_Jan_24OD_068.jpg", "Bright_Storm_19_Jan_24OD_069.jpg", "Bright_Storm_19_Jan_24OD_070.jpg",
+                    "Bright_Storm_19_Jan_24OD_071.jpg", "Bright_Storm_19_Jan_24OD_072.jpg", "Bright_Storm_19_Jan_24OD_073.jpg", "Bright_Storm_19_Jan_24OD_074.jpg", "Bright_Storm_19_Jan_24OD_075.jpg",
+                    "Bright_Storm_19_Jan_24OD_076.jpg", "Bright_Storm_19_Jan_24OD_077.jpg", "Bright_Storm_19_Jan_24OD_078.jpg", "Bright_Storm_19_Jan_24OD_079.jpg", "Bright_Storm_19_Jan_24OD_080.jpg",
+                    "Bright_Storm_19_Jan_24OD_081.jpg", "Bright_Storm_19_Jan_24OD_082.jpg", "Bright_Storm_19_Jan_24OD_083.jpg", "Bright_Storm_19_Jan_24OD_084.jpg", "Bright_Storm_19_Jan_24OD_085.jpg",
+                    "Bright_Storm_19_Jan_24OD_086.jpg", "Bright_Storm_19_Jan_24OD_087.jpg", "Bright_Storm_19_Jan_24OD_088.jpg", "Bright_Storm_19_Jan_24OD_089.jpg", "Bright_Storm_19_Jan_24OD_090.jpg",
+                    "Bright_Storm_19_Jan_24OD_091.jpg", "Bright_Storm_19_Jan_24OD_092.jpg", "Bright_Storm_19_Jan_24OD_093.jpg", "Bright_Storm_19_Jan_24OD_094.jpg", "Bright_Storm_19_Jan_24OD_095.jpg",
+                    "Bright_Storm_19_Jan_24OD_096.jpg", "Bright_Storm_19_Jan_24OD_097.jpg", "Bright_Storm_19_Jan_24OD_098.jpg", "Bright_Storm_19_Jan_24OD_099.jpg", "Bright_Storm_19_Jan_24OD_100.jpg",
+                    "Bright_Storm_19_Jan_24OD_101.jpg", "Bright_Storm_19_Jan_24OD_102.jpg", "Bright_Storm_19_Jan_24OD_103.jpg", "Bright_Storm_19_Jan_24OD_104.jpg", "Bright_Storm_19_Jan_24OD_105.jpg",
+                    "Bright_Storm_19_Jan_24OD_106.jpg", "Bright_Storm_19_Jan_24OD_107.jpg", "Bright_Storm_19_Jan_24OD_108.jpg", "Bright_Storm_19_Jan_24OD_109.jpg", "Bright_Storm_19_Jan_24OD_110.jpg",
+                    "Bright_Storm_19_Jan_24OD_111.jpg", "Bright_Storm_19_Jan_24OD_112.jpg", "Bright_Storm_19_Jan_24OD_113.jpg", "Bright_Storm_19_Jan_24OD_114.jpg", "Bright_Storm_19_Jan_24OD_115.jpg",
+                    "Bright_Storm_19_Jan_24OD_116.jpg", "Bright_Storm_19_Jan_24OD_117.jpg", "Bright_Storm_19_Jan_24OD_118.jpg", "Bright_Storm_19_Jan_24OD_119.jpg", "Bright_Storm_19_Jan_24OD_120.jpg"
+                ];
+
+                this.sequence3 = [
+                    "ezgif-frame-001.jpg", "ezgif-frame-002.jpg", "ezgif-frame-003.jpg", "ezgif-frame-004.jpg", "ezgif-frame-005.jpg",
+                    "ezgif-frame-006.jpg", "ezgif-frame-007.jpg", "ezgif-frame-008.jpg", "ezgif-frame-009.jpg", "ezgif-frame-010.jpg",
+                    "ezgif-frame-011.jpg", "ezgif-frame-012.jpg", "ezgif-frame-013.jpg", "ezgif-frame-014.jpg", "ezgif-frame-015.jpg",
+                    "ezgif-frame-016.jpg", "ezgif-frame-017.jpg", "ezgif-frame-018.jpg", "ezgif-frame-019.jpg", "ezgif-frame-020.jpg",
+                    "ezgif-frame-021.jpg", "ezgif-frame-022.jpg", "ezgif-frame-023.jpg", "ezgif-frame-024.jpg", "ezgif-frame-025.jpg",
+                    "ezgif-frame-026.jpg", "ezgif-frame-027.jpg", "ezgif-frame-028.jpg", "ezgif-frame-029.jpg", "ezgif-frame-030.jpg",
+                    "ezgif-frame-031.jpg", "ezgif-frame-032.jpg", "ezgif-frame-033.jpg", "ezgif-frame-034.jpg", "ezgif-frame-035.jpg",
+                    "ezgif-frame-036.jpg", "ezgif-frame-037.jpg", "ezgif-frame-038.jpg", "ezgif-frame-039.jpg", "ezgif-frame-040.jpg",
+                    "ezgif-frame-041.jpg", "ezgif-frame-042.jpg", "ezgif-frame-043.jpg", "ezgif-frame-044.jpg", "ezgif-frame-045.jpg",
+                    "ezgif-frame-046.jpg", "ezgif-frame-047.jpg", "ezgif-frame-048.jpg", "ezgif-frame-049.jpg", "ezgif-frame-050.jpg",
+                    "ezgif-frame-051.jpg", "ezgif-frame-052.jpg", "ezgif-frame-053.jpg", "ezgif-frame-054.jpg", "ezgif-frame-055.jpg",
+                    "ezgif-frame-056.jpg", "ezgif-frame-057.jpg", "ezgif-frame-058.jpg", "ezgif-frame-059.jpg", "ezgif-frame-060.jpg",
+                    "ezgif-frame-061.jpg", "ezgif-frame-062.jpg", "ezgif-frame-063.jpg", "ezgif-frame-064.jpg", "ezgif-frame-065.jpg",
+                    "ezgif-frame-066.jpg", "ezgif-frame-067.jpg", "ezgif-frame-068.jpg", "ezgif-frame-069.jpg", "ezgif-frame-070.jpg",
+                    "ezgif-frame-071.jpg", "ezgif-frame-072.jpg", "ezgif-frame-073.jpg", "ezgif-frame-074.jpg", "ezgif-frame-075.jpg",
+                    "ezgif-frame-076.jpg", "ezgif-frame-077.jpg", "ezgif-frame-078.jpg", "ezgif-frame-079.jpg", "ezgif-frame-080.jpg"
+                ];
+
+                this.sequence4 = [
+                    "ezgif-frame-001.jpg", "ezgif-frame-002.jpg", "ezgif-frame-003.jpg", "ezgif-frame-004.jpg", "ezgif-frame-005.jpg",
+                    "ezgif-frame-006.jpg", "ezgif-frame-007.jpg", "ezgif-frame-008.jpg", "ezgif-frame-009.jpg", "ezgif-frame-010.jpg",
+                    "ezgif-frame-011.jpg", "ezgif-frame-012.jpg", "ezgif-frame-013.jpg", "ezgif-frame-014.jpg", "ezgif-frame-015.jpg",
+                    "ezgif-frame-016.jpg", "ezgif-frame-017.jpg", "ezgif-frame-018.jpg", "ezgif-frame-019.jpg", "ezgif-frame-020.jpg",
+                    "ezgif-frame-021.jpg", "ezgif-frame-022.jpg", "ezgif-frame-023.jpg", "ezgif-frame-024.jpg", "ezgif-frame-025.jpg",
+                    "ezgif-frame-026.jpg", "ezgif-frame-027.jpg", "ezgif-frame-028.jpg", "ezgif-frame-029.jpg", "ezgif-frame-030.jpg",
+                    "ezgif-frame-031.jpg", "ezgif-frame-032.jpg", "ezgif-frame-033.jpg", "ezgif-frame-034.jpg", "ezgif-frame-035.jpg",
+                    "ezgif-frame-036.jpg", "ezgif-frame-037.jpg", "ezgif-frame-038.jpg", "ezgif-frame-039.jpg", "ezgif-frame-040.jpg",
+                    "ezgif-frame-041.jpg", "ezgif-frame-042.jpg", "ezgif-frame-043.jpg", "ezgif-frame-044.jpg", "ezgif-frame-045.jpg",
+                    "ezgif-frame-046.jpg", "ezgif-frame-047.jpg", "ezgif-frame-048.jpg", "ezgif-frame-049.jpg", "ezgif-frame-050.jpg",
+                    "ezgif-frame-051.jpg", "ezgif-frame-052.jpg", "ezgif-frame-053.jpg", "ezgif-frame-054.jpg", "ezgif-frame-055.jpg",
+                    "ezgif-frame-056.jpg", "ezgif-frame-057.jpg", "ezgif-frame-058.jpg", "ezgif-frame-059.jpg", "ezgif-frame-060.jpg",
+                    "ezgif-frame-061.jpg", "ezgif-frame-062.jpg", "ezgif-frame-063.jpg", "ezgif-frame-064.jpg", "ezgif-frame-065.jpg",
+                    "ezgif-frame-066.jpg", "ezgif-frame-067.jpg", "ezgif-frame-068.jpg", "ezgif-frame-069.jpg", "ezgif-frame-070.jpg",
+                    "ezgif-frame-071.jpg", "ezgif-frame-072.jpg", "ezgif-frame-073.jpg", "ezgif-frame-074.jpg"
+                ];
+
                 this.sequences = {
                     'sequence1': [],
                     'sequence2': [],
@@ -623,29 +714,55 @@
             }
 
             async loadImages() {
-                // Define the actual file naming patterns for each sequence with relative paths
-                const filePatterns = {
-                    'sequence1': (index) => `./sequence1/undefined_iwdl_${String(index).padStart(3, '0')}.jpg`,
-                    'sequence2': (index) => `./sequence2/Bright_Storm_19_Jan_24OD_${String(index).padStart(3, '0')}.jpg`,
-                    'sequence3': (index) => `./sequence3/ezgif-frame-${String(index).padStart(3, '0')}.jpg`,
-                    'sequence4': (index) => `./sequence4/ezgif-frame-${String(index).padStart(3, '0')}.jpg`
-                };
+                // Load images for sequence1
+                for (const filename of this.sequence1) {
+                    const img = new Image();
+                    img.crossOrigin = 'anonymous';
+                    try {
+                        await this.loadImagePromise(img, `./sequence1/${filename}`);
+                        this.sequences['sequence1'].push(img);
+                    } catch (error) {
+                        console.warn(`Failed to load image: ./sequence1/${filename}`, error);
+                        break; // Stop if an image fails to load
+                    }
+                }
 
-                // Load images for each sequence
-                for (const [seqName, patternFn] of Object.entries(filePatterns)) {
-                    let frameIndex = 1;
-                    while (true) {
-                        const img = new Image();
-                        img.crossOrigin = 'anonymous';
-                        const url = patternFn(frameIndex);
+                // Load images for sequence2
+                for (const filename of this.sequence2) {
+                    const img = new Image();
+                    img.crossOrigin = 'anonymous';
+                    try {
+                        await this.loadImagePromise(img, `./sequence2/${filename}`);
+                        this.sequences['sequence2'].push(img);
+                    } catch (error) {
+                        console.warn(`Failed to load image: ./sequence2/${filename}`, error);
+                        break; // Stop if an image fails to load
+                    }
+                }
 
-                        try {
-                            await this.loadImagePromise(img, url);
-                            this.sequences[seqName].push(img);
-                            frameIndex++;
-                        } catch (error) {
-                            break; // No more images in this sequence
-                        }
+                // Load images for sequence3
+                for (const filename of this.sequence3) {
+                    const img = new Image();
+                    img.crossOrigin = 'anonymous';
+                    try {
+                        await this.loadImagePromise(img, `./sequence3/${filename}`);
+                        this.sequences['sequence3'].push(img);
+                    } catch (error) {
+                        console.warn(`Failed to load image: ./sequence3/${filename}`, error);
+                        break; // Stop if an image fails to load
+                    }
+                }
+
+                // Load images for sequence4
+                for (const filename of this.sequence4) {
+                    const img = new Image();
+                    img.crossOrigin = 'anonymous';
+                    try {
+                        await this.loadImagePromise(img, `./sequence4/${filename}`);
+                        this.sequences['sequence4'].push(img);
+                    } catch (error) {
+                        console.warn(`Failed to load image: ./sequence4/${filename}`, error);
+                        break; // Stop if an image fails to load
                     }
                 }
 
@@ -724,22 +841,22 @@
                 const progress = this.scrollProgress;
 
                 if (progress < 0.25) {
-                    // sequence1: 0% to 25%
+                    // sequence1: 0% to 25% - Ingredients
                     const sequenceProgress = progress / 0.25;
                     const frameIndex = Math.floor(sequenceProgress * (this.sequences['sequence1'].length - 1));
                     return { sequence: 'sequence1', frame: Math.max(0, Math.min(frameIndex, this.sequences['sequence1'].length - 1)) };
                 } else if (progress < 0.5) {
-                    // sequence2: 25% to 50%
+                    // sequence2: 25% to 50% - Chocolate Flow
                     const sequenceProgress = (progress - 0.25) / 0.25;
                     const frameIndex = Math.floor(sequenceProgress * (this.sequences['sequence2'].length - 1));
                     return { sequence: 'sequence2', frame: Math.max(0, Math.min(frameIndex, this.sequences['sequence2'].length - 1)) };
                 } else if (progress < 0.75) {
-                    // sequence3: 50% to 75%
+                    // sequence3: 50% to 75% - Wafer Formation
                     const sequenceProgress = (progress - 0.5) / 0.25;
                     const frameIndex = Math.floor(sequenceProgress * (this.sequences['sequence3'].length - 1));
                     return { sequence: 'sequence3', frame: Math.max(0, Math.min(frameIndex, this.sequences['sequence3'].length - 1)) };
                 } else {
-                    // sequence4: 75% to 100%
+                    // sequence4: 75% to 100% - Final Pack
                     const sequenceProgress = (progress - 0.75) / 0.25;
                     const frameIndex = Math.floor(sequenceProgress * (this.sequences['sequence4'].length - 1));
                     return { sequence: 'sequence4', frame: Math.max(0, Math.min(frameIndex, this.sequences['sequence4'].length - 1)) };
