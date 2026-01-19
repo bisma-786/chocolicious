@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WaferCraft - Premium Chocolate Wafer Rolls</title>
+    <title>ARTISANAL - Premium Chocolate Craftsmanship</title>
     <style>
         * {
             margin: 0;
@@ -514,13 +514,13 @@
     </div>
 
     <header>
-        <div class="brand-name">WAFERCRAFT</div>
+        <div class="brand-name">ARTISANAL</div>
         <nav>
             <div class="nav-menu" id="nav-menu">
                 <ul>
-                    <li><a href="#product">Product</a></li>
-                    <li><a href="#story">Story</a></li>
-                    <li><a href="https://www.linkedin.com/in/bisma-razzaq786/" target="_blank">Contact</a></li>
+                    <li><a href="#product">Collection</a></li>
+                    <li><a href="#story">Heritage</a></li>
+                    <li><a href="https://www.linkedin.com/in/bisma-razzaq786/" target="_blank">Atelier</a></li>
                 </ul>
             </div>
             <div class="hamburger" id="hamburger">
@@ -541,33 +541,33 @@
 
         <!-- Text Overlays -->
         <div class="text-overlay" id="overlay1">
-            <h1 class="headline">It starts with ingredients.</h1>
-            <p class="subtext">Carefully sourced. Purposefully chosen. Nothing accidental.</p>
+            <h1 class="headline">Precision begins with selection.</h1>
+            <p class="subtext">Each ingredient chosen with meticulous care. No shortcuts, no compromises.</p>
         </div>
 
         <div class="text-overlay" id="overlay2">
-            <h1 class="headline">Crafted. Melted. Refined.</h1>
-            <p class="subtext">Silky chocolate, tempered to perfection, flowing with intent.</p>
+            <h1 class="headline">Molten mastery.</h1>
+            <p class="subtext">Chocolate transformed through exacting temperatures. Every drop holds intention.</p>
         </div>
 
         <div class="text-overlay" id="overlay3">
-            <h1 class="headline">Rolled to perfection.</h1>
-            <p class="subtext">Where texture meets technique, and balance becomes flavor.</p>
+            <h1 class="headline">Engineering elegance.</h1>
+            <p class="subtext">Where science meets artistry. Each curve calculated, each fold perfected.</p>
         </div>
 
         <div class="text-overlay" id="overlay4">
-            <h1 class="headline">Finished. Branded. Ready.</h1>
-            <p class="subtext">A premium wafer roll designed to be remembered.</p>
+            <h1 class="headline">Heritage crafted. Future refined.</h1>
+            <p class="subtext">A legacy of taste, shaped for tomorrow's connoisseurs.</p>
             <div class="cta-wrapper">
-                <a href="https://www.foodpanda.pk/groceries/product/r1vf-1831/innovative-frisky-rolls-hazelnut-family-pack-box" target="_blank" class="cta-button">Experience the roll.</a>
+                <a href="https://www.foodpanda.pk/groceries/product/r1vf-1831/innovative-frisky-rolls-hazelnut-family-pack-box" target="_blank" class="cta-button">Experience Artisanal</a>
             </div>
         </div>
     </div>
 
     <footer>
-        <div class="tagline">Premium Chocolate Wafer Rolls</div>
-        <div class="copyright">© 2026 WAFERCRAFT. All rights reserved.</div>
-        <div class="built-by">Built with BuiltByHer by Bisma 💗</div>
+        <div class="tagline">Artisanal Chocolate Excellence</div>
+        <div class="copyright">© 2026 ARTISANAL. All rights reserved.</div>
+        <div class="built-by">Crafted with precision by Bisma 💗</div>
     </footer>
 
     <script>
@@ -581,13 +581,13 @@
 
                 // Animation sequences
                 this.sequences = {
-                    '01-ingredients': [],
-                    '02-chocolate-flow': [],
-                    '03-wafer-formation': [],
-                    '04-final-pack': []
+                    'sequence1': [],
+                    'sequence2': [],
+                    'sequence3': [],
+                    'sequence4': []
                 };
 
-                this.currentSequence = '01-ingredients';
+                this.currentSequence = 'sequence1';
                 this.currentFrame = 0;
                 this.totalFrames = 0;
                 this.isLoaded = false;
@@ -598,10 +598,10 @@
 
                 // DOM elements
                 this.overlays = {
-                    '01-ingredients': document.getElementById('overlay1'),
-                    '02-chocolate-flow': document.getElementById('overlay2'),
-                    '03-wafer-formation': document.getElementById('overlay3'),
-                    '04-final-pack': document.getElementById('overlay4')
+                    'sequence1': document.getElementById('overlay1'),
+                    'sequence2': document.getElementById('overlay2'),
+                    'sequence3': document.getElementById('overlay3'),
+                    'sequence4': document.getElementById('overlay4')
                 };
 
                 this.preloader = document.querySelector('.preloader');
@@ -625,10 +625,10 @@
             async loadImages() {
                 // Define the actual file naming patterns for each sequence with absolute paths
                 const filePatterns = {
-                    '01-ingredients': (index) => `/01-ingredients/undefined_iwdl_${String(index).padStart(3, '0')}.jpg`,
-                    '02-chocolate-flow': (index) => `/02-chocolate-flow/Bright_Storm_19_Jan_24OD_${String(index).padStart(3, '0')}.jpg`,
-                    '03-wafer-formation': (index) => `/03-wafer-formation/ezgif-frame-${String(index).padStart(3, '0')}.jpg`,
-                    '04-final-pack': (index) => `/04-final-pack/ezgif-frame-${String(index).padStart(3, '0')}.jpg`
+                    'sequence1': (index) => `/sequence1/frame${String(index).padStart(3, '0')}.jpg`,
+                    'sequence2': (index) => `/sequence2/frame${String(index).padStart(3, '0')}.jpg`,
+                    'sequence3': (index) => `/sequence3/frame${String(index).padStart(3, '0')}.jpg`,
+                    'sequence4': (index) => `/sequence4/frame${String(index).padStart(3, '0')}.jpg`
                 };
 
                 // Load images for each sequence
@@ -650,10 +650,10 @@
                 }
 
                 this.totalFrames = Math.max(
-                    this.sequences['01-ingredients'].length,
-                    this.sequences['02-chocolate-flow'].length,
-                    this.sequences['03-wafer-formation'].length,
-                    this.sequences['04-final-pack'].length
+                    this.sequences['sequence1'].length,
+                    this.sequences['sequence2'].length,
+                    this.sequences['sequence3'].length,
+                    this.sequences['sequence4'].length
                 );
 
                 this.isLoaded = true;
@@ -710,25 +710,25 @@
                 const progress = this.scrollProgress;
 
                 if (progress < 0.25) {
-                    // 01-ingredients: 0% to 25%
+                    // sequence1: 0% to 25%
                     const sequenceProgress = progress / 0.25;
-                    const frameIndex = Math.floor(sequenceProgress * (this.sequences['01-ingredients'].length - 1));
-                    return { sequence: '01-ingredients', frame: Math.max(0, Math.min(frameIndex, this.sequences['01-ingredients'].length - 1)) };
+                    const frameIndex = Math.floor(sequenceProgress * (this.sequences['sequence1'].length - 1));
+                    return { sequence: 'sequence1', frame: Math.max(0, Math.min(frameIndex, this.sequences['sequence1'].length - 1)) };
                 } else if (progress < 0.5) {
-                    // 02-chocolate-flow: 25% to 50%
+                    // sequence2: 25% to 50%
                     const sequenceProgress = (progress - 0.25) / 0.25;
-                    const frameIndex = Math.floor(sequenceProgress * (this.sequences['02-chocolate-flow'].length - 1));
-                    return { sequence: '02-chocolate-flow', frame: Math.max(0, Math.min(frameIndex, this.sequences['02-chocolate-flow'].length - 1)) };
+                    const frameIndex = Math.floor(sequenceProgress * (this.sequences['sequence2'].length - 1));
+                    return { sequence: 'sequence2', frame: Math.max(0, Math.min(frameIndex, this.sequences['sequence2'].length - 1)) };
                 } else if (progress < 0.75) {
-                    // 03-wafer-formation: 50% to 75%
+                    // sequence3: 50% to 75%
                     const sequenceProgress = (progress - 0.5) / 0.25;
-                    const frameIndex = Math.floor(sequenceProgress * (this.sequences['03-wafer-formation'].length - 1));
-                    return { sequence: '03-wafer-formation', frame: Math.max(0, Math.min(frameIndex, this.sequences['03-wafer-formation'].length - 1)) };
+                    const frameIndex = Math.floor(sequenceProgress * (this.sequences['sequence3'].length - 1));
+                    return { sequence: 'sequence3', frame: Math.max(0, Math.min(frameIndex, this.sequences['sequence3'].length - 1)) };
                 } else {
-                    // 04-final-pack: 75% to 100%
+                    // sequence4: 75% to 100%
                     const sequenceProgress = (progress - 0.75) / 0.25;
-                    const frameIndex = Math.floor(sequenceProgress * (this.sequences['04-final-pack'].length - 1));
-                    return { sequence: '04-final-pack', frame: Math.max(0, Math.min(frameIndex, this.sequences['04-final-pack'].length - 1)) };
+                    const frameIndex = Math.floor(sequenceProgress * (this.sequences['sequence4'].length - 1));
+                    return { sequence: 'sequence4', frame: Math.max(0, Math.min(frameIndex, this.sequences['sequence4'].length - 1)) };
                 }
             }
 
@@ -742,7 +742,7 @@
                 this.overlays[currentSequence].classList.add('active');
 
                 // Handle CTA button visibility
-                if (currentSequence === '04-final-pack' && this.scrollProgress > 0.95) {
+                if (currentSequence === 'sequence4' && this.scrollProgress > 0.95) {
                     this.ctaButton.classList.add('show');
                 } else {
                     this.ctaButton.classList.remove('show');
