@@ -123,7 +123,7 @@
 
         /* Main Container */
         .main-container {
-            height: 500vh;
+            height: 600vh;
             position: relative;
             margin: 0;
             padding: 0;
@@ -546,12 +546,12 @@
         </div>
 
         <div class="text-overlay" id="overlay2">
-            <h1 class="headline">Crafted in motion.</h1>
+            <h1 class="headline">Crafted. Melted. Refined.</h1>
             <p class="subtext">Silky chocolate, tempered to perfection, flowing with intent.</p>
         </div>
 
         <div class="text-overlay" id="overlay3">
-            <h1 class="headline">Rolled with precision.</h1>
+            <h1 class="headline">Rolled to perfection.</h1>
             <p class="subtext">Where texture meets technique, and balance becomes flavor.</p>
         </div>
 
@@ -623,12 +623,12 @@
             }
 
             async loadImages() {
-                // Define the actual file naming patterns for each sequence
+                // Define the actual file naming patterns for each sequence with absolute paths
                 const filePatterns = {
-                    '01-ingredients': (index) => `01-ingredients/undefined_iwdl_${String(index).padStart(3, '0')}.jpg`,
-                    '02-chocolate-flow': (index) => `02-chocolate-flow/Bright_Storm_19_Jan_24OD_${String(index).padStart(3, '0')}.jpg`,
-                    '03-wafer-formation': (index) => `03-wafer-formation/ezgif-frame-${String(index).padStart(3, '0')}.jpg`,
-                    '04-final-pack': (index) => `04-final-pack/ezgif-frame-${String(index).padStart(3, '0')}.jpg`
+                    '01-ingredients': (index) => `/01-ingredients/undefined_iwdl_${String(index).padStart(3, '0')}.jpg`,
+                    '02-chocolate-flow': (index) => `/02-chocolate-flow/Bright_Storm_19_Jan_24OD_${String(index).padStart(3, '0')}.jpg`,
+                    '03-wafer-formation': (index) => `/03-wafer-formation/ezgif-frame-${String(index).padStart(3, '0')}.jpg`,
+                    '04-final-pack': (index) => `/04-final-pack/ezgif-frame-${String(index).padStart(3, '0')}.jpg`
                 };
 
                 // Load images for each sequence
@@ -765,41 +765,22 @@
 
                     let drawWidth, drawHeight, offsetX, offsetY;
 
-                    // Determine if we're on a small screen
-                    const isSmallScreen = window.innerWidth <= 768;
-
                     if (imgRatio > canvasRatio) {
                         // Image is wider than canvas - fit to width
                         drawWidth = this.canvas.width;
                         drawHeight = this.canvas.width / imgRatio;
-
-                        // On small screens, make images slightly larger by zooming in
-                        if (isSmallScreen) {
-                            drawWidth *= 1.1; // 10% larger on small screens
-                            drawHeight *= 1.1;
-                        }
-
-                        offsetX = (this.canvas.width - drawWidth) / 2;
+                        offsetX = 0;
                         offsetY = (this.canvas.height - drawHeight) / 2;
                     } else {
                         // Image is taller than canvas - fit to height
                         drawHeight = this.canvas.height;
                         drawWidth = this.canvas.height * imgRatio;
-
-                        // On small screens, make images slightly larger by zooming in
-                        if (isSmallScreen) {
-                            drawWidth *= 1.1; // 10% larger on small screens
-                            drawHeight *= 1.1;
-                        }
-
                         offsetX = (this.canvas.width - drawWidth) / 2;
-                        offsetY = (this.canvas.height - drawHeight) / 2;
+                        offsetY = 0;
                     }
 
-                    // Draw image centered with possible zoom for small screens
-                    this.ctx.drawImage(currentImg,
-                        offsetX, offsetY,
-                        drawWidth, drawHeight);
+                    // Draw image centered with object-contain behavior
+                    this.ctx.drawImage(currentImg, offsetX, offsetY, drawWidth, drawHeight);
                 }
 
                 // Update overlays
@@ -812,6 +793,33 @@
                 requestAnimationFrame(() => this.animate());
             }
         }
+
+        // Hamburger menu functionality
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+
+            // Animate hamburger lines
+            hamburger.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!navMenu.contains(event.target) && !hamburger.contains(event.target)) {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
+        });
 
         // Smooth scrolling for anchor links with mobile optimization
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -852,33 +860,6 @@
                     }
                 }
             });
-        });
-
-        // Hamburger menu functionality
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('nav-menu');
-
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-
-            // Animate hamburger lines
-            hamburger.classList.toggle('active');
-        });
-
-        // Close menu when clicking on a link
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                hamburger.classList.remove('active');
-            });
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', (event) => {
-            if (!navMenu.contains(event.target) && !hamburger.contains(event.target)) {
-                navMenu.classList.remove('active');
-                hamburger.classList.remove('active');
-            }
         });
 
         // Initialize the animation when the page loads

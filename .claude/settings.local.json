@@ -14,7 +14,12 @@
       "Bash(dir /b \"C:\\\\Users\\\\Bisma Gondal\\\\Desktop\\\\choco-waffers\\\\04-final-pack\")",
       "Bash(git init)",
       "Bash(git remote add origin https://github.com/bisma-786/choco-rolls.git)",
-      "Bash(git add .)"
+      "Bash(git add .)",
+      "Bash(git config user.name \"Claude Sonnet 4.5\")",
+      "Bash(git config user.email \"noreply@anthropic.com\")",
+      "Bash(git commit -m \"Enhance mobile responsiveness with hamburger menu and improved layout\n\n- Reduced brown spaces on small screens\n- Made images appear larger on mobile devices\n- Converted navbar to hamburger menu for mobile\n- Improved touch targets and mobile UX\n- Optimized canvas rendering for small screens\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\")",
+      "Bash(git branch -M main)",
+      "Bash(git push -u origin main)"
     ]
   }
 }
