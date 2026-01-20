@@ -43,10 +43,29 @@ export default function Home() {
     const [showCta, setShowCta] = useState(false);
 
     useEffect(() => {
+        console.log('Starting ScrollytellingAnimation'); // Debug log
+
+        // Check if canvas element exists before initializing
+        if (!canvasRef.current) {
+            console.error('Canvas element not found!');
+            return;
+        }
+
         class ScrollytellingAnimation {
             constructor() {
                 this.canvas = canvasRef.current;
+
+                if (!this.canvas) {
+                    console.error('Canvas reference is null');
+                    return;
+                }
+
                 this.ctx = this.canvas.getContext('2d');
+
+                if (!this.ctx) {
+                    console.error('Failed to get canvas 2D context');
+                    return;
+                }
 
                 // Set canvas size
                 this.resizeCanvas();
@@ -391,6 +410,7 @@ export default function Home() {
         }
 
         new ScrollytellingAnimation();
+        console.log('ScrollytellingAnimation initialized'); // Debug log
 
         // Hamburger menu functionality
         const hamburger = document.getElementById('hamburger');

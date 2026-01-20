@@ -45,7 +45,8 @@
       "Bash(git add package.json .gitignore app/ public/ next.config.js index.html)",
       "Bash(git commit -m \"Update project configuration for chocolicious repository\n\n- Update package.json name to match repository\n- Update repository URLs in package.json\n- Ensure .gitignore properly excludes build artifacts\")",
       "Bash(git fetch origin)",
-      "Bash(git push --force-with-lease origin main)"
+      "Bash(git push --force-with-lease origin main)",
+      "Bash(git commit -m \"fix: Resolve 404 errors on Vercel deployment\n\n- Improve image loading error handling to continue loading other images\n- Add debug logging to identify specific image loading issues\n- Update Next.js config to properly handle static assets on Vercel\n- Change error handling to continue instead of breaking on first failed image\")"
     ]
   }
 }
